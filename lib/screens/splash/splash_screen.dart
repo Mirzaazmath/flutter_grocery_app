@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:grocery_app/utils/color_utils.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../utils/showUp_animation_util.dart';
 import '../../utils/text_utils.dart';
-import '../landing/landing_screen.dart';
+
 import '../login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor:AppColors().white,
 
       body: Column(
         children: [

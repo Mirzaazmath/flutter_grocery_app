@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/utils/showUp_animation_util.dart';
 import 'package:grocery_app/utils/textfeild_utils.dart';
+import '../../utils/submit_btn_utils.dart';
 import '../../utils/text_utils.dart';
 class LoginWidget extends StatefulWidget {
   const LoginWidget({super.key});
@@ -37,32 +38,9 @@ class _LoginWidgetState extends State<LoginWidget> {
           const   Spacer(),
             Field(controller:_emailController , icon: Icons.mail, hinttext: 'Email',),
             const SizedBox(height: 10,),
-            Field(controller:_passwordController, icon: Icons.visibility,hinttext: 'Password',),
+            Field(controller:_passwordController, icon: Icons.key,hinttext: 'Password',isPasswordfeild: true,),
             const   Spacer(),
-           GestureDetector(
-             child: Container(
-               height: 50,
-               width: double.infinity,
-               decoration: BoxDecoration(
-                 boxShadow:[
-                    BoxShadow(
-                      color:Colors.grey.shade400,
-                      offset:const  Offset(4,4),
-                      blurRadius: 10
-                    ),
-                   BoxShadow(
-                       color:Colors.grey.shade300,
-                       offset:const  Offset(-3,-3),
-                       blurRadius: 10
-                   )
-                   ],
-                   borderRadius: BorderRadius.circular(10),
-                   color: Theme.of(context).primaryColor
-               ),
-               alignment: Alignment.center,
-               child: TextUtil(text: "Submit",color: Colors.white,size: 22,),
-             ),
-           ),
+            SubmitButton(title: 'Submit',onTap: (){},),
         const   Spacer(),
             Align(
               alignment: Alignment.centerRight,

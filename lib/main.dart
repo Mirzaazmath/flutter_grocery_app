@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:grocery_app/screens/splash/splash_screen.dart';
+import 'package:grocery_app/utils/color_utils.dart';
 
 import 'firebase_options.dart';
 Future<void> main() async {
@@ -8,7 +10,9 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
+  runApp(ProviderScope(
+    child: MyApp(),
+  ));
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       theme: ThemeData(
-        primaryColor:const  Color(0xffff5050)
+        primaryColor:AppColors().primaryColor
       ),
       debugShowCheckedModeBanner: false,
       home:const  SplashScreen(),

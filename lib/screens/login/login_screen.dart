@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/screens/login/login_widget.dart';
 import 'package:grocery_app/screens/login/register_widget.dart';
 
+import '../../utils/color_utils.dart';
 import '../../utils/showUp_animation_util.dart';
 import '../../utils/text_utils.dart';
 class LoginScreen extends StatefulWidget {
@@ -19,7 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    pageController.addListener(() { setState(() {
+    pageController.addListener(() {
+      setState(() {
       _progress=pageController.page??0;
       debugPrint(_progress.toString());
 
@@ -48,9 +50,9 @@ class _LoginScreenState extends State<LoginScreen> {
           
             Container(
               height: height*0.6+_progress*140,
-              decoration:const  BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(30))
+              decoration:  BoxDecoration(
+                color: AppColors().white,
+                borderRadius:const  BorderRadius.vertical(top: Radius.circular(30))
               ),
               child: PageView(
                 controller: pageController,
