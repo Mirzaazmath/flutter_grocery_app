@@ -5,6 +5,7 @@ import 'package:lottie/lottie.dart';
 
 import '../../utils/showUp_animation_util.dart';
 import '../../utils/text_utils.dart';
+import '../landing/landing_screen.dart';
 import '../login/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
