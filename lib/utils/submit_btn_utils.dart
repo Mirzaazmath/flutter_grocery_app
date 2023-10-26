@@ -10,7 +10,10 @@ class SubmitButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final loading = ref.watch(loadingProvider);
+    //for Loading purpose
+    final loading =  checkLoadingState(ref.watch(loadingProvider));
+    // for successful SignUP
+    final result=ref.watch(loadingProvider);
     return  GestureDetector(
       onTap: onTap,
       child: Center(
@@ -36,9 +39,18 @@ class SubmitButton extends ConsumerWidget {
           ),
           alignment: Alignment.center,
           duration: const Duration(milliseconds: 400),
-          child:loading? CircularProgressIndicator(color: AppColors().white,): TextUtil(text: title,color: Colors.white,size: 22,),
+          child:loading? CircularProgressIndicator(color: AppColors().white,): TextUtil(text:result==LoadingState.success?"Success": title,color: Colors.white,size: 22,),
         ),
       ),
     );
   }
-}
+  checkLoadingState(value){
+    if(LoadingState.loading==value){
+      return true;
+    }else{
+      return false;
+    }
+    }
+  }
+
+

@@ -44,6 +44,8 @@ dependencies:
   fluttertoast: ^8.2.2
   # for StateManagement
   flutter_riverpod: ^2.4.1
+  # for internet State
+  connectivity_plus: ^5.0.1
 
 dev_dependencies:
   flutter_test:
